@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "name": "chat-application",
+  "version": "1.0.0",
+  "description": "A comprehensive chat app that has private chat, group chat, authorization features",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm run test",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "mern-chat-app"
+  },
+  "author": "Soyas",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.1",
+    "nodemon": "^2.0.21",
+    "socket.io": "^4.6.1"
+  }
+}
