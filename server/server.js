@@ -1,25 +1,25 @@
 import express from 'express';
-import { chats } from './data/data.js';
 import dotenv from 'dotenv/config';
 import { connectDB } from './config/db.js';
+import userRoutes from './routes/userRoutes.js';
+import { errorHandler, notFound } from './middleware/errorMiddleware.js';
 
 connectDB();
 const app = express();
+
+// middleware
+app.use(express.json());
 
 // routes api
 app.get("/", (req, res) => {
     res.send("Api is running");
 });
 
-app.get('/api/chat', (req, res) => {
-    res.send(chats);
-});
+app.use('/api/user', userRoutes);
+// error handling for invalid routes
+app.use(notFound);
+app.use(errorHandler);
 
-app.get('/api/chat/:id', (req, res) => {
-    const { id } = req.params;
-    const singleChat = chats.find(c => c._id === id);
-    res.send(singleChat);
-});
 
 // routes ends
 const PORT = process.env.PORT || 5000;
