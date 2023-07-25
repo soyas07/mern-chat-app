@@ -3,10 +3,10 @@
   "name": "chat-application",
   "version": "1.0.0",
   "description": "A comprehensive chat app that has private chat, group chat, authorization features",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "npm run test",
-    "start": "nodemon server.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
